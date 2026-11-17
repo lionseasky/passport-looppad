@@ -212,6 +212,7 @@ provide reference material. Choose the entry that matches your task.
 | [Wi-Fi provisioning](development/engineering/wifi-provisioning.md) | Bluetooth provisioning reference and companion mini program |
 | [Community projects and experience](reference/README.md) | Playbooks and reusable knowledge under `docs/reference/<username>/` |
 | [Contributing](contribution/README.md) | Documentation, commits, and pull-request conventions |
+| [LOOP PAD sampler](apps/loop-pad.md) | Four-track lo-fi beatbox sampler: manual, controls, storage limits, and implementation notes |
 | [Brand assets](brand/README.md) | Product visual references and [brand language](brand/brand-and-product.md) |
 | [Fork guide](fork-guide.md) · [Changelog](CHANGELOG.md) | Downstream workflows and release history |
 

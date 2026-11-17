@@ -15,6 +15,11 @@
 - 添加字库前评估 Flash 与内部 RAM 影响；ESP32-C3 无 PSRAM。
 - 不提交许可不允许分发的字库。
 
+| 文件 | 格式 | 用途与来源 |
+| --- | --- | --- |
+| [`fonts/loop_font_16.c`](fonts/loop_font_16.c)、[`fonts/loop_font_24.c`](fonts/loop_font_24.c)、[`fonts/loop_font_32.c`](fonts/loop_font_32.c) | LVGL 9 PLAIN 4bpp 位图字库,285 个码位,行高 20/28/36 px | LOOP PAD 采样器界面字体(`main/loop_ui.c`)。由 `tools/loop_font.py` 从思源黑体静态 OTF 栅格化(SIL Open Font License 1.1;OTF 本身不入库)。请求的字符清单在 [`fonts/loop_charset.txt`](fonts/loop_charset.txt),每个 `.c` 都有配对的 `_symbols.txt`。重新生成:`--size 16|24|32 --charset assets/fonts/loop_charset.txt --symbol lv_font_loop_<size> --out assets/fonts/loop_font_<size>.c`。改了界面文案却没有重新生成字库时,`tests/test_lofi_font_coverage.py` 会失败。 |
+
+
 ## 图片（images）
 
 可复用的源图与生成的显示资产放在 `images/`。

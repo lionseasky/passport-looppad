@@ -17,6 +17,11 @@ Store reusable font files and generated font sources in `fonts/`.
 - Check Flash and internal-RAM impact before adding a font; the ESP32-C3 has no PSRAM.
 - Do not commit fonts whose license does not permit redistribution.
 
+| File | Format | Use and source |
+| --- | --- | --- |
+| [`fonts/loop_font_16.c`](fonts/loop_font_16.c), [`fonts/loop_font_24.c`](fonts/loop_font_24.c), [`fonts/loop_font_32.c`](fonts/loop_font_32.c) | LVGL 9 PLAIN 4bpp bitmap fonts, 285 code points, line heights 20/28/36 px | UI font for the LOOP PAD sampler (`main/loop_ui.c`). Rasterized by `tools/loop_font.py` from a Source Han Sans SC static OTF (SIL Open Font License 1.1; the OTF itself is not committed). The requested character inventory is [`fonts/loop_charset.txt`](fonts/loop_charset.txt); each `.c` has a matching `_symbols.txt` list. Regenerate with `--size 16|24|32 --charset assets/fonts/loop_charset.txt --symbol lv_font_loop_<size> --out assets/fonts/loop_font_<size>.c`. `tests/test_lofi_font_coverage.py` fails when UI strings are added without regenerating the font. |
+
+
 ## Images
 
 Store reusable source images and generated display assets in `images/`.
